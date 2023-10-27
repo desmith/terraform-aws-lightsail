@@ -4,7 +4,7 @@ locals {
       name    = var.zone_apex_name
       type    = "A"
       ttl     = 300
-      records = [aws_lightsail_instance.lightsail.public_ip_address]
+      records = [aws_lightsail_static_ip.lightsail.ip_address]
     }]
   zone_records = concat(local.apex_record, var.zone_records)
 }

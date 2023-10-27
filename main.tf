@@ -6,7 +6,7 @@ locals {
       ttl     = 300
       records = [aws_lightsail_instance.lightsail.public_ip_address]
     }])
-  zone_records = merge(local.apex_record[*], var.zone_records)
+  zone_records = merge(local.apex_record, var.zone_records)
 }
 
 # DNS for the lightsail instance

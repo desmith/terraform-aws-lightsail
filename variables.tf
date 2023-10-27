@@ -17,7 +17,6 @@ variable "ip_address_type" {
 variable "blueprint" {
   type        = string
   description = "One of the blueprints listed by the AWS cli - aws lightsail get-blueprints"
-  default     = "wordpress"
 }
 
 variable "bundle_id" {
@@ -32,7 +31,7 @@ variable "static_ip_name" {
   description = "Unique name for the lightsail static ip resource"
 }
 
-variable "key_pair" {
+variable "key_pair_name" {
   type        = string
   description = "Key pair used for ssh access"
 }

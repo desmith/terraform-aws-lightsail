@@ -1,3 +1,4 @@
+# This is a test
 resource "aws_lightsail_instance" "lightsail" {
   name              = var.instance_name
   availability_zone = var.availability_zone

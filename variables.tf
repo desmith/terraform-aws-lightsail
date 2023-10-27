@@ -11,26 +11,26 @@ variable "availability_zone" {
 variable "ip_address_type" {
   type        = string
   description = "The IP address type of the Lightsail Instance. Valid Values: dualstack | ipv4"
-  default = "dualstack"
+  default     = "dualstack"
 }
 
 variable "blueprint" {
   type        = string
   description = "One of the blueprints listed by the AWS cli - aws lightsail get-blueprints"
-  default = "wordpress"
+  default     = "wordpress"
 }
 
 variable "bundle_id" {
   type        = string
   description = "The bundle id of the instance"
-  default = "micro_2_0"
+  #  default     = "micro_2_0"
+  default = "nano_2_0"
 }
 
 variable "static_ip_name" {
   type        = string
   description = "Unique name for the lightsail static ip resource"
 }
-
 
 variable "key_pair" {
   type        = string

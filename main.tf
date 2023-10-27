@@ -2,6 +2,7 @@
 module "route53" {
   source = "git@github.com:desmith/terraform-aws-route53.git"
   zone_name = var.zone_name
+  zone_apex_name = var.zone_apex_name
   records = var.zone_records
 }
 

@@ -1,9 +1,10 @@
 resource "aws_lightsail_instance" "lightsail" {
-  name              = var.lightsail_instance_name
-  availability_zone = var.lightsail_availability_zone
-  ip_address_type   = var.lightsail_ip_address_type
-  blueprint_id      = var.lightsail_blueprint
-  bundle_id         = var.lightsail_bundle_id
+  name              = var.instance_name
+  availability_zone = var.availability_zone
+  ip_address_type   = var.ip_address_type
+  blueprint_id      = var.blueprint
+  bundle_id         = var.bundle_id
+  key_pair_name     = var.key_pair
 
   add_on {
     type          = "AutoSnapshot"
@@ -13,7 +14,7 @@ resource "aws_lightsail_instance" "lightsail" {
 }
 
 resource "aws_lightsail_static_ip" "lightsail" {
-  name = var.lightsail_static_ip_name
+  name = var.static_ip_name
 }
 
 resource "aws_lightsail_static_ip_attachment" "lightsail" {

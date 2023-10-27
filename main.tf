@@ -4,7 +4,7 @@ locals {
       name    = var.zone_apex_name
       type    = "A"
       ttl     = 300
-      records = list(aws_lightsail_instance.lightsail.public_ip_address)
+      records = tolist([aws_lightsail_instance.lightsail.public_ip_address])
     }]
   zone_records = merge(local.apex_record[*], var.zone_records)
 }

@@ -1,9 +1,21 @@
+locals {
+  # Get the zone name from the apex name
+  apex_record = {
+    name    = var.zone_apex_name
+    type    = "A"
+    ttl     = 300
+    records = [aws_lightsail_instance.lightsail.public_ip_address]
+  }
+  zone_records = merge(local.apex_record, var.zone_records)
+}
+
 # DNS for the lightsail instance
 module "route53" {
-  source = "git@github.com:desmith/terraform-aws-route53.git"
-  zone_name = var.zone_name
+  count          = var.zone_apex_name == "" ? 0 : 1
+  source         = "git@github.com:desmith/terraform-aws-route53.git"
+  zone_name      = var.zone_name
   zone_apex_name = var.zone_apex_name
-  records = var.zone_records
+  records        = local.zone_records
 }
 
 resource "aws_lightsail_instance" "lightsail" {

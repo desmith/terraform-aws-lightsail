@@ -1,4 +1,10 @@
-# Main module
+# DNS for the lightsail instance
+module "route53" {
+  source = "git@github.com:desmith/terraform-aws-route53.git"
+  zone_name = var.zone_name
+  records = var.zone_records
+}
+
 resource "aws_lightsail_instance" "lightsail" {
   name              = var.instance_name
   availability_zone = var.availability_zone

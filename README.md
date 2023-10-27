@@ -7,11 +7,13 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.23.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
 
 ## Modules
 
-No modules.
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_route53"></a> [route53](#module\_route53) | git@github.com:desmith/terraform-aws-route53.git | n/a |
 
 ## Resources
 
@@ -33,6 +35,8 @@ No modules.
 | <a name="input_ip_address_type"></a> [ip\_address\_type](#input\_ip\_address\_type) | The IP address type of the Lightsail Instance. Valid Values: dualstack \| ipv4 | `string` | `"dualstack"` | no |
 | <a name="input_key_pair_name"></a> [key\_pair\_name](#input\_key\_pair\_name) | Key pair used for ssh access | `string` | n/a | yes |
 | <a name="input_static_ip_name"></a> [static\_ip\_name](#input\_static\_ip\_name) | Unique name for the lightsail static ip resource | `string` | n/a | yes |
+| <a name="input_zone_name"></a> [zone\_name](#input\_zone\_name) | The route53 zone name | `string` | n/a | yes |
+| <a name="input_zone_records"></a> [zone\_records](#input\_zone\_records) | n/a | <pre>list(object({<br>    name = string<br>    type = string<br>    ttl = number<br>    records = list(string)<br>  }))</pre> | n/a | yes |
 
 ## Outputs
 

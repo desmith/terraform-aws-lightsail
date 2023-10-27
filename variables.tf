@@ -41,3 +41,17 @@ variable "instance_tags" {
   description = "Set key value tags for lightsail instance"
   default     = {}
 }
+
+variable "zone_name" {
+  type = string
+  description = "The route53 zone name"
+}
+
+variable "zone_records" {
+  type = list(object({
+    name = string
+    type = string
+    ttl = number
+    records = list(string)
+  }))
+}

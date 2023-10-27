@@ -1,11 +1,11 @@
 locals {
   # Get the zone name from the apex name
-  apex_record = [{
+  apex_record = tolist([{
       name    = var.zone_apex_name
       type    = "A"
       ttl     = 300
-      records = tolist([aws_lightsail_instance.lightsail.public_ip_address])
-    }]
+      records = [aws_lightsail_instance.lightsail.public_ip_address]
+    }])
   zone_records = merge(local.apex_record[*], var.zone_records)
 }
 

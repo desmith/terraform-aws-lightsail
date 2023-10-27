@@ -15,7 +15,7 @@ module "route53" {
   source         = "git@github.com:desmith/terraform-aws-route53.git"
   zone_name      = var.zone_name
   zone_apex_name = var.zone_apex_name
-  records        = local.zone_records
+  zone_records   = local.zone_records
 }
 
 resource "aws_lightsail_instance" "lightsail" {

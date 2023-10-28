@@ -45,5 +45,4 @@ No requirements.
 |------|-------------|
 | <a name="output_lightsail_instance_id"></a> [lightsail\_instance\_id](#output\_lightsail\_instance\_id) | n/a |
 | <a name="output_lightsail_instance_public_ip"></a> [lightsail\_instance\_public\_ip](#output\_lightsail\_instance\_public\_ip) | n/a |
-| <a name="output_lightsail_static_public_ip"></a> [lightsail\_static\_public\_ip](#output\_lightsail\_static\_public\_ip) | n/a |
 <!-- END_TF_DOCS -->
